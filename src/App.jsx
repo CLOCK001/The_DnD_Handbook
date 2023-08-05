@@ -1,8 +1,20 @@
+import Landing from "./pages/Landing"
+import Home from "./pages/Home"
+import { Routes, Route, useNavigate } from "react-router-dom"
+import { useEffect } from "react"
+
 function App() {
+  const navigation = useNavigate()
+
+  useEffect(() => {
+    navigation("/Landing")
+  }, [])
+  
   return (
-    <div>
-      <h1 className="text-slate-500 text-3xl text-center">The DnD Handbook</h1>
-    </div>
+      <Routes>
+        <Route path="/Landing" element={<Landing/>} />
+        <Route path="/Home/:book" element={<Home/>} />
+      </Routes>
   )
 }
 
