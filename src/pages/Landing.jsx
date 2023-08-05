@@ -10,13 +10,14 @@ export default function Landing() {
         <h1 className="text-slate-500 text-5xl sm:text-6xl md:text-7xl text-center m-4">The DnD Handbook</h1>
       </div>
       
-      <div className="text-center m-5">
+      <div className="text-center m-5 p-3 border-4 border-slate-600 rounded-md">
         {buttonArray.map((item) => (
             <Link key={item} to={`/Home/${item}`} >
               <Button  buttonLable={item} />
             </Link>
         ))}
       </div>
+      <h1 className="text-center text-slate-500 text-2xl">by Anas Sameh</h1>
     </div>
   )
 }
