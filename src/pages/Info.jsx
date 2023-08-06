@@ -1,3 +1,4 @@
+import InfoItems from "../components/InfoItems"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 
@@ -18,13 +19,13 @@ export default function Info() {
 
   switch(catagory) {
     case "equipment":
-      return(
-        <div>
-          <h1>{item && item.name}</h1>
-          <h1>{item && item.weight}</h1>
-          <h1>{item && item.equipment_category.name}</h1>
-        </div>
-      )
+      return <InfoItems 
+      title={item && item.name} 
+      extra1={item && item.equipment_category.name} 
+      extra2={`weight: ${item && item.weight}`}
+      extra3={item && item.gear_category.name}
+
+      />
   }
   
   return (
